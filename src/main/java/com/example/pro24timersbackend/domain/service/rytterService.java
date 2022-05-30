@@ -25,9 +25,12 @@ public class rytterService {
     public List<rytterModel> readbikerList(){
         return rytterRepo.findAll();
     }
-    public Optional<rytterModel> readbikerbyteam(Long holdnavn){
-        return rytterRepo.findById(holdnavn);
+
+   /* public Optional<List<rytterModel>> readbikerbyteam(String hold){
+        return rytterRepo.findAll().stream().filter(rytterModel-> rytterModel.gethold() != null && rytterModel.gethold() == holdnavn);
     }
+
+    */
     //read one ById
     public Optional<rytterModel> readbiker(Long id){
         return rytterRepo.findById(id);

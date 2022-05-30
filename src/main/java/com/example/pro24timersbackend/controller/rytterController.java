@@ -39,6 +39,15 @@ public class rytterController {
 
     */
 
+    @GetMapping("/{name}")
+    public ResponseEntity<List<rytterModel>> readbikerlistTeam(@PathVariable String name) {
+        List<rytterModel> bikerlist = rytterService.readbikerList();
+        bikerlist.stream().filter(x -> bikerlist.contains(name));
+        return new ResponseEntity<>(bikerlist, HttpStatus.OK);
+
+    }
+
+
     @GetMapping("/{id}")
     public rytterModel readbiker(@PathVariable Long id) {
         Optional<rytterModel> readbiker = rytterService.readbiker(id);

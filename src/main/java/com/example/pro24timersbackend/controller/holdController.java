@@ -23,6 +23,16 @@ public class holdController {
         this.holdService = holdService;
     }
 
+
+
+   @GetMapping("/")
+   public String home(){
+        return "hello world";
+   }
+
+
+
+
     @GetMapping
     public ResponseEntity<List<holdModel>> readteamList() {
         List<holdModel> teamlist = holdService.readteamList();
